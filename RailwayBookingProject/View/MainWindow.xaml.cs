@@ -55,8 +55,9 @@ public partial class MainWindow : Window
 
 
         Task.Run(() => SearchTIcket(ГородОтправления, ГородПрибытия, selectedDate));
-        //SearchResultWindow resultWindow = new SearchResultWindow(); // Как в окно вставить данные?!
-        //resultWindow.Show();
+        SearchResultWindow resultWindow = new SearchResultWindow(); // Как в окно вставить данные?!
+        resultWindow.Show();
+
 
     }
     private async Task SearchTIcket(string ГородОтправления, string ГородПрибытия, DateTime? Data)
@@ -96,8 +97,12 @@ public partial class MainWindow : Window
             }
         }
     }
+    private void Join(object sender, RoutedEventArgs e)
+    {
+        JoinClient personalAccountWindow = new JoinClient();
+        personalAccountWindow.Show();
+    }
 
-  
 
 
 
@@ -251,13 +256,9 @@ public partial class MainWindow : Window
     //    }
     //}
 
-    private void Join(object sender, RoutedEventArgs e)
-    {
-        JoinClient personalAccountWindow = new JoinClient();
-        personalAccountWindow.Show();
-    }
 
-    
+
+
 }
 
 
